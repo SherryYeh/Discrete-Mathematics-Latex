@@ -1,0 +1,283 @@
+\documentclass[12pt,hyperref={bookmarks=false}]{beamer}
+
+%\usepackage[no-math]{fontspec} % https://www.ptt.cc/bbs/LaTeX/M.1505577244.A.952.html
+\usepackage{xeCJK}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{musixtex}
+\usepackage{enumitem}
+\usepackage{algorithm,algorithmic}
+
+
+\renewcommand\qedsymbol{$\blacktriangleleft$}
+
+%\setCJKmainfont{新細明體}
+\setCJKmainfont{標楷體}
+
+\usetheme{Malmoe}
+\usecolortheme{dolphin}
+\usefonttheme[onlymath]{serif}
+%\usefonttheme{serif} % professionalfonts
+% default, serif, professionalfonts, structurebold, structureitalicserif, structuresmallcapsserif
+\useoutertheme{miniframes} %{infolines}
+\usepackage{xmpmulti}
+
+\linespread{1.2}
+
+%\newenvironment{num}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{itemize}}
+%{\end{itemize}}
+
+%\newenvironment{enu}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{enumerate}}
+%{\end{enumerate}}
+
+%-------------------------------------------------------------
+\title{離散數學 107-2}
+\subtitle{Homework 10}
+\author{姓名: 葉子瑄。學號: 107590041}
+\date{Handout: 2019.06.3 (week-16)}
+
+%-------------------------------------------------------------
+% page number
+% https://tex.stackexchange.com/questions/137022/how-to-insert-page-number-in-beamer-navigation-bars
+%-------------------------------------------------------------
+
+\setbeamertemplate{navigation symbols}
+{ \insertslidenavigationsymbol 
+  \insertframenavigationsymbol   
+  \insertsubsectionnavigationsymbol  
+  \insertsectionnavigationsymbol
+  \insertdocnavigationsymbol  
+  \insertbackfindforwardnavigationsymbol 
+  \hspace{1em}  
+  \usebeamerfont{footline} 
+  \insertframenumber
+  ~-~
+  \inserttotalframenumber
+}
+\setcounter{page}{1} 
+\pagenumbering{arabic} 
+
+
+%----------------------------------------------------------------------------------
+\begin{document}
+%----------------------------------------------------------------------------------
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\raggedright
+
+\begin{frame}
+% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge
+%\normalsize
+\footnotesize
+\tableofcontents
+\end{frame}
+	
+%----------------------------------------------------------------------------------
+\section{題目}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{題目與注意事項}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Homework 10 題目}
+	\fontsize{10pt}{11pt}\selectfont
+	\setlength{\baselineskip}{5pt}
+	\begin{columns}
+	\begin{column}{0.68\textwidth}
+	\begin{enumerate}[label=(Prob. \arabic*)]
+	\setlength\itemsep{0em}
+	\item page 683, chapter 10.1 Exercise 2
+	\item page 699, chapter 10.2 Exercise 8
+	\item page 710, chapter 10.3 Exercise 8
+	\item page 724, chapter 10.4 Exercise 2
+	\item page 741, chapter 10.5 Exercise 54
+	\item page 753, chapter 10.6 Exercise 26
+	\item page 761, chapter 10.7 Exercise 14
+	\item page 768, chapter 10.8 Exercise 6
+	\end{enumerate}
+	\end{column}
+	
+%	\begin{column}{0.45\textwidth}
+%	\begin{enumerate}[label=(Prob. \arabic*)]
+%	\addtocounter{enumi}{21}
+%	\setlength\itemsep{0em}
+%	\item page xx, chapter xx Exercises xx	
+%	\end{enumerate}
+%	\end{column}
+	
+	\end{columns}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{注意事項}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item 要熟悉 LaTeX 請翻閱 \ \htmladdnormallink{\color{blue}lshort}{https://ctan.org/tex-archive/info/lshort/}。
+	\item 記得在最後一頁，回報\selectfont \color{red}{完成作業小時數}(估算，取整數)\selectfont \color{black}{。}
+	\item 將檔案夾命名為 \texttt{hw10\_107820xxx}，將檔案夾壓縮成 \texttt{hw10\_107820xxx.zip}，上傳到\htmladdnormallink{\color{blue}網路學園}{http://elearning.ntut.edu.tw}。
+	\item LaTeX 數學符號請查此表: \ \htmladdnormallink{\color{blue}List of LaTeX mathematical symbols}{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols}。
+	\item 作業抄襲，以零分計。作業提供給他人抄襲，以零分計。
+	\item 作業遲交一週內成績打五折，作業遲交超過一週以零分計。
+	\end{enumerate}
+	\end{frame}
+
+%----------------------------------------------------------------------------------
+\section{作答區}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{解題}
+	%----------------------------------------------------------------------------------
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 1 (10.1 Exercise 2)}
+	\fontsize{12}{16pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\setlength\itemsep{0em}
+	\item simple graph
+	\item multigraph
+	\item pseudograph
+	\end{enumerate}
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 2 (10.2 Exercise 8)}
+	\fontsize{12}{16pt}\selectfont
+	
+	Ans: In this directed multigraph there are \underline{~~4~~} vertices and \underline{~~8~~} edges.\\ The degrees are:\\ 
+	$\text{deg}^{-}(a) = 2$, $\text{deg}^{+}(a) = 2$, \\
+	$\text{deg}^{-}(b) = 3$, $\text{deg}^{+}(b) = 4$, \\
+	$\text{deg}^{-}(c) = 2$, $\text{deg}^{+}(c) = 1$, \\
+	$\text{deg}^{-}(d) = 1$, $\text{deg}^{+}(d) = 1$, \\	
+	\end{frame}
+	
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 3 (10.3 Exercise 8)}
+	\fontsize{12}{16pt}\selectfont
+
+	$
+	\begin{bmatrix}
+	   0 & 1 & 0 & 1 & 0 \\
+ 	   1 & 0 & 1 & 1 & 1 \\
+ 	   0 & 1 & 1 & 0 & 0 \\
+ 	   1 & 0 & 0 & 0 & 1 \\
+ 	   0 & 0 & 1 & 0 & 1 \\
+	\end{bmatrix}
+	$
+
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 4 (10.4 Exercise 2)}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\setlength\itemsep{1em}
+	\item This \underline{~~is~~} (is, is not) a path of length \underline{~~4~~}, it \underline{~~is not~~} (is, is not) a circuit, it \underline{~~is~~} (is, is not) simple.
+
+	\item This \underline{~~is~~} (is, is not) a path of length \underline{~~4~~}, it \underline{~~is~~} (is, is not) a circuit, it \underline{~~is not~~} (is, is not) simple.
+
+	\item This \underline{~~is not~~} (is, is not) a path, since there is no edge from d to b.
+	
+	\item This \underline{~~is not~~} (is, is not) a path, since there is no edge from b to d.
+	\end{enumerate}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 5 (10.5 Exercise 54)}
+	\fontsize{10}{10pt}\selectfont
+
+	\vspace*{0.3cm}
+	Ans: \\
+	\vspace*{0.3cm}
+
+	\underline{~~. An Euler~~} (An Euler, A Hamilton) path will cover every link, so it can be used to test the links.\\
+
+	\vspace*{0.3cm}
+
+	\underline{~~A Hamilton~~} (An Euler, A Hamilton) path will cover all the devices, so it can be used to test the devices.
+	
+	\end{frame}
+	
+    %----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 6 (10.6 Exercise 26)}
+	\fontsize{9}{9pt}\selectfont
+
+	\begin{enumerate}[label=(\alph*)]
+	\setlength\itemsep{0.2em}
+	\item Circuit: a-b-c-d-e-a, Weight = 3 + 10 + 6 + 1 + 7 = 27
+	\item Circuit: a-b-c-e-d-a, Weight = 3 + 10 + 5 + 1 + 4 = 23
+	\item Circuit: a-b-d-c-e-a, Weight = 3 + 9 + 6 + 5 + 7 = 30
+	\item Circuit: a-b-d-e-c-a, Weight = 3 + 9 + 1 + 5 + 8 = 26
+
+	
+	\item Circuit: a-b-e-c-d-a, Weight = 3 + 2 + 5 + 6 + 4 = 20
+	\item Circuit: a-b-e-d-c-a, Weight = 3  + 2 + 1 + 6 + 8 = 20
+	\item Circuit: a-c-b-d-e-a, Weight = 8 + 10 + 9 + 1 + 7 = 35
+	\item Circuit: a-c-b-e-d-a, Weight = 8 + 10 + 2 + 1 + 4 = 25
+	
+	\item Circuit: a-c-d-b-e-a, Weight = 8 + 6 + 9 + 2 + 7 = 32
+	\item Circuit: a-c-e-b-d-a, Weight = 8 + 5 + 2 + 9 + 4 = 28
+	\item Circuit: a-d-b-c-e-a, Weight = 4 + 9 + 10 + 5 + 7 = 35
+	\item Circuit: a-d-c-b-e-a, Weight = 4 + 6 + 10 + 2 + 7 = 29
+	\end{enumerate}
+	The circuits \underline{~~a,b,e,c,d,a~~} and \underline{~~a,b,e,d,c,a~~} are the ones with minimum total weight.
+	\end{frame}
+
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 7 (10.7 Exercise 14)}
+	\fontsize{12}{16pt}\selectfont
+
+	\vspace*{0.3cm}
+	Ans: \\
+	\vspace*{0.3cm}
+	Euler's formula says that $v - e + r = 2$.\\
+	We are given $e = 30$ and $r = 20$. \\
+	Therefore $v = e - r +2  = 30 − 20 + 2 = 12$.
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 8 (10.8 Exercise 6)}
+	\fontsize{12}{16pt}\selectfont
+	Ans: Since there is a triangle in the graph, we will need at least 3 colors.
+	Because vertex g is connected to all other vertices,so it needs to be assigned a unique color. 
+	Then we can assign one color to b,d and f and another to a,c and e. 
+	\end{frame}	
+	%----------------------------------------------------------------------------------
+
+
+		
+%----------------------------------------------------------------------------------
+\section{完成作業小時數}
+%----------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------	
+\begin{frame}
+\frametitle{完成作業小時數}
+\centerline{\fontsize{16}{16pt}\selectfont{\color{blue}完成作業小時數:\color{red}共\underline{   4   }小時\color{blue}(估算，取整數)}}	
+\end{frame}
+%----------------------------------------------------------------------------------	
+
+%----------------------------------------------------------------------------------
+\end{document}
+%----------------------------------------------------------------------------------
+

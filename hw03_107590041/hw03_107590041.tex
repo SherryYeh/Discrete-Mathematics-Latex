@@ -1,0 +1,203 @@
+\documentclass[14pt,hyperref={bookmarks=false}]{beamer}
+
+%\usepackage[no-math]{fontspec} % https://www.ptt.cc/bbs/LaTeX/M.1505577244.A.952.html
+\usepackage{xeCJK}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{musixtex}
+\usepackage{enumitem}
+\usepackage{algorithm,algorithmic}
+
+
+\renewcommand\qedsymbol{$\blacktriangleleft$}
+
+%\setCJKmainfont{新細明體}
+\setCJKmainfont{標楷體}
+
+\usetheme{Malmoe}
+\usecolortheme{dolphin}
+\usefonttheme[onlymath]{serif}
+%\usefonttheme{serif} % professionalfonts
+% default, serif, professionalfonts, structurebold, structureitalicserif, structuresmallcapsserif
+\useoutertheme{miniframes} %{infolines}
+\usepackage{xmpmulti}
+
+\linespread{1.2}
+
+%\newenvironment{num}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{itemize}}
+%{\end{itemize}}
+
+%\newenvironment{enu}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{enumerate}}
+%{\end{enumerate}}
+
+%-------------------------------------------------------------
+\title{離散數學 107-2}
+\subtitle{Homework 03}
+\author{姓名: 葉子瑄。學號: 107590041}
+\date{截止收件: 2019.05.08 (Wednesday) 23:59 pm \\ (week-12)}
+
+%-------------------------------------------------------------
+% page number
+% https://tex.stackexchange.com/questions/137022/how-to-insert-page-number-in-beamer-navigation-bars
+%-------------------------------------------------------------
+
+\setbeamertemplate{navigation symbols}
+{ \insertslidenavigationsymbol 
+  \insertframenavigationsymbol   
+  \insertsubsectionnavigationsymbol  
+  \insertsectionnavigationsymbol
+  \insertdocnavigationsymbol  
+  \insertbackfindforwardnavigationsymbol 
+  \hspace{1em}  
+  \usebeamerfont{footline} 
+  \insertframenumber
+  ~-~
+  \inserttotalframenumber
+}
+\setcounter{page}{1} 
+\pagenumbering{arabic} 
+
+
+%----------------------------------------------------------------------------------
+\begin{document}
+%----------------------------------------------------------------------------------
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\raggedright
+
+\begin{frame}
+% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge
+%\normalsize
+\footnotesize
+\tableofcontents
+\end{frame}
+	
+%----------------------------------------------------------------------------------
+\section{題目}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{題目與注意事項}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Homework 03 題目}
+	\fontsize{8pt}{9pt}\selectfont
+	\setlength{\baselineskip}{5pt}
+	\begin{columns}
+	\begin{column}{0.68\textwidth}
+	\begin{enumerate}[label=(Prob. \arabic*)]
+	\setlength\itemsep{0em}
+	\item page 214, chapter 3.1 Exercises 24
+	\item page 228, chapter 3.2 Exercises 2
+	\item page 241, chapter 3.3 Exercises 2
+	\end{enumerate}
+	\end{column}
+	
+%	\begin{column}{0.45\textwidth}
+%	\begin{enumerate}[label=(Prob. \arabic*)]
+%	\addtocounter{enumi}{21}
+%	\setlength\itemsep{0em}
+%	\item page xx, chapter xx Exercises xx	
+%	\end{enumerate}
+%	\end{column}
+	
+	\end{columns}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{注意事項}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item 要熟悉 LaTeX 請翻閱 \ \htmladdnormallink{\color{blue}lshort}{https://ctan.org/tex-archive/info/lshort/}。
+	\item 記得在最後一頁，回報\selectfont \color{red}{完成作業小時數}(估算，取整數)\selectfont \color{black}{。}
+	\item 將檔案夾命名為 \texttt{hw03\_107820xxx}，將檔案夾壓縮成 \texttt{hw03\_107820xxx.zip}，上傳到\htmladdnormallink{\color{blue}網路學園}{http://elearning.ntut.edu.tw}。
+	\item LaTeX 數學符號請查此表: \ \htmladdnormallink{\color{blue}List of LaTeX mathematical symbols}{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols}。
+	\item 作業抄襲，以零分計。作業提供給他人抄襲，以零分計。
+	\item 作業遲交一週內成績打五折，作業遲交超過一週以零分計。
+	\end{enumerate}
+	\end{frame}
+
+%----------------------------------------------------------------------------------
+\section{作答區}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{解題}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 01 (3.1 Exercise 24)}
+	\fontsize{6}{7pt}\selectfont
+
+% https://en.wikibooks.org/wiki/LaTeX/Algorithms
+\begin{algorithm}[H]
+  \algsetup{linenosize=\tiny}
+  \scriptsize
+\begin{algorithmic}[1]
+\FOR{$i : = 1$ to $m$}
+\STATE {$hit(b_i) := 0$}
+\ENDFOR
+\STATE {$one\_one := \mathbf{true}$}
+\FOR{$j : = 1$ to $n$}
+\IF{$hit(f(a_j)) = 0$}
+\STATE {$hit( f(a_j) ) := 1$ }
+\ELSE
+\STATE{$one\_one := \mathbf{false}$}
+\ENDIF
+\ENDFOR
+\RETURN $one\_one$
+\end{algorithmic}
+\caption{\footnotesize \\ procedure $one\_one$($f$ : function,$a_1,a_2,...,a_n,b_1,b_2,...,b_m$): integers)}
+\label{alg:seq}
+\end{algorithm}
+
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 02 (3.2 Exercise 2)}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item Yes, $C = 18, k = 11$
+	\item Yes, $C = 2, k = \sqrt{1000}\approx(32)$
+	\item Yes, $C = 1, k = 0$
+	\item No
+	\end{enumerate}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 03 (3.3 Exercise 2)}
+	\fontsize{10}{10pt}\selectfont
+	答: The statement $t := t + i + j$ is executed $2n^2$ times, so the number of operations is $O(n^2)$.
+	\end{frame}
+	
+
+	%----------------------------------------------------------------------------------
+
+		
+%----------------------------------------------------------------------------------
+\section{完成作業小時數}
+%----------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------	
+\begin{frame}
+\frametitle{完成作業小時數}
+\centerline{\fontsize{16}{16pt}\selectfont{\color{blue}完成作業小時數:\color{red}共\underline{   2   }小時\color{blue}(估算，取整數)}}	
+\end{frame}
+%----------------------------------------------------------------------------------	
+
+%----------------------------------------------------------------------------------
+\end{document}
+%----------------------------------------------------------------------------------
+

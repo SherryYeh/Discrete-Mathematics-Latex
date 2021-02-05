@@ -1,0 +1,217 @@
+\documentclass[12pt,hyperref={bookmarks=false}]{beamer}
+
+%\usepackage[no-math]{fontspec} % https://www.ptt.cc/bbs/LaTeX/M.1505577244.A.952.html
+\usepackage{xeCJK}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{musixtex}
+\usepackage{enumitem}
+\usepackage{algorithm,algorithmic}
+
+
+\renewcommand\qedsymbol{$\blacktriangleleft$}
+
+%\setCJKmainfont{新細明體}
+\setCJKmainfont{標楷體}
+
+\usetheme{Malmoe}
+\usecolortheme{dolphin}
+\usefonttheme[onlymath]{serif}
+%\usefonttheme{serif} % professionalfonts
+% default, serif, professionalfonts, structurebold, structureitalicserif, structuresmallcapsserif
+\useoutertheme{miniframes} %{infolines}
+\usepackage{xmpmulti}
+
+\linespread{1.2}
+
+%\newenvironment{num}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{itemize}}
+%{\end{itemize}}
+
+%\newenvironment{enu}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{enumerate}}
+%{\end{enumerate}}
+
+%-------------------------------------------------------------
+\title{離散數學 107-2}
+\subtitle{Homework 11}
+\author{姓名: 葉子瑄。學號: 107590041}
+\date{Handout: 2019.06.03 (week-16)}
+
+%-------------------------------------------------------------
+% page number
+% https://tex.stackexchange.com/questions/137022/how-to-insert-page-number-in-beamer-navigation-bars
+%-------------------------------------------------------------
+
+\setbeamertemplate{navigation symbols}
+{ \insertslidenavigationsymbol 
+  \insertframenavigationsymbol   
+  \insertsubsectionnavigationsymbol  
+  \insertsectionnavigationsymbol
+  \insertdocnavigationsymbol  
+  \insertbackfindforwardnavigationsymbol 
+  \hspace{1em}  
+  \usebeamerfont{footline} 
+  \insertframenumber
+  ~-~
+  \inserttotalframenumber
+}
+\setcounter{page}{1} 
+\pagenumbering{arabic} 
+
+
+%----------------------------------------------------------------------------------
+\begin{document}
+%----------------------------------------------------------------------------------
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\raggedright
+
+\begin{frame}
+% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge
+%\normalsize
+\footnotesize
+\tableofcontents
+\end{frame}
+	
+%----------------------------------------------------------------------------------
+\section{題目}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{題目與注意事項}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Homework 11 題目}
+	\fontsize{10pt}{11pt}\selectfont
+	\setlength{\baselineskip}{5pt}
+	\begin{columns}
+	\begin{column}{0.68\textwidth}
+	\begin{enumerate}[label=(Prob. \arabic*)]
+	\setlength\itemsep{0em}
+	\item page 791, chapter 11.1 Exercise 4
+	\item page 806, chapter 11.2 Exercise 22
+	\item page 820, chapter 11.3 Exercise 8
+	\item page 832, chapter 11.4 Exercise 12
+	\item page 839, chapter 11.5 Exercise 2
+	\end{enumerate}
+	\end{column}
+	
+%	\begin{column}{0.45\textwidth}
+%	\begin{enumerate}[label=(Prob. \arabic*)]
+%	\addtocounter{enumi}{21}
+%	\setlength\itemsep{0em}
+%	\item page xx, chapter xx Exercises xx	
+%	\end{enumerate}
+%	\end{column}
+	
+	\end{columns}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{注意事項}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item 要熟悉 LaTeX 請翻閱 \ \htmladdnormallink{\color{blue}lshort}{https://ctan.org/tex-archive/info/lshort/}。
+	\item 記得在最後一頁，回報\selectfont \color{red}{完成作業小時數}(估算，取整數)\selectfont \color{black}{。}
+	\item 將檔案夾命名為 \texttt{hw11\_107820xxx}，將檔案夾壓縮成 \texttt{hw11\_107820xxx.zip}，上傳到\htmladdnormallink{\color{blue}網路學園}{http://elearning.ntut.edu.tw}。
+	\item LaTeX 數學符號請查此表: \ \htmladdnormallink{\color{blue}List of LaTeX mathematical symbols}{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols}。
+	\item 作業抄襲，以零分計。作業提供給他人抄襲，以零分計。
+	\item 作業遲交一週內成績打五折，作業遲交超過一週以零分計。
+	\end{enumerate}
+	\end{frame}
+
+%----------------------------------------------------------------------------------
+\section{作答區}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{解題}
+	%----------------------------------------------------------------------------------
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 1 (11.1 Exercise 4)}
+	\fontsize{12}{16pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\setlength\itemsep{0em}
+	\item vertex $a$ is the root
+	\item vertex $a$, $b$, $d$, $e$, $g$, $h$, $i$, and $o$ are internal vertices.
+	\item vertex $c$, $f$, $j$, $k$, $l$, $m$, $n$, $p$, $q$, $r$, and $s$ are leaves vertices.
+	\item vertex $j$ does not have any children.
+	\item The parent of $h$ is the vertex $d$.
+	\item The siblings of $o$ is the vertex $p$.
+	\item The ancestors of $m$ are $a$ , $b$, and $g$.
+	\item The descendants of $b$ are $e$, $f$ , $g$ , $j$ , $k$ , $l$, and $m$.
+	\end{enumerate}
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 2 (11.2 Exercise 22)}
+	\fontsize{12}{16pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\setlength\itemsep{0em}
+	\item test
+	\item beer
+	\item sex
+	\item tax
+	\end{enumerate}
+	\end{frame}
+	
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 3 (11.3 Exercise 8)}
+	\fontsize{12}{16pt}\selectfont
+	Ans:$a$, $b$, $d$, $e$, $i$, $j$, $m$, $n$, $o$, $c$, $f$, $g$, $h$, $k$, $l$, $p$.
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 4 (11.4 Exercise 12)}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\setlength\itemsep{0em}
+	\item 1
+	\item 2
+	\item 3
+	\end{enumerate}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 5 (11.5 Exercise 2)}
+	\fontsize{10}{10pt}\selectfont
+
+	\vspace*{0.3cm}
+	Ans: \\
+	We start with the minimum weight edge ${a, b}$. The least weight edge incident to the tree constructed so far is edge $\{a, e\}$, with weight 2, so we add it to the tree. Next we add edge $\{c, e\}$, and then edge $\{c, d\}$. This completes the tree, whose total weight is \underline{~~6~~}.
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+
+
+		
+%----------------------------------------------------------------------------------
+\section{完成作業小時數}
+%----------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------	
+\begin{frame}
+\frametitle{完成作業小時數}
+\centerline{\fontsize{16}{16pt}\selectfont{\color{blue}完成作業小時數:\color{red}共\underline{   3   }小時\color{blue}(估算，取整數)}}	
+\end{frame}
+%----------------------------------------------------------------------------------	
+
+%----------------------------------------------------------------------------------
+\end{document}
+%----------------------------------------------------------------------------------
+

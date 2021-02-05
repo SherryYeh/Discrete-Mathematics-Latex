@@ -1,0 +1,292 @@
+\documentclass[14pt,hyperref={bookmarks=false}]{beamer}
+
+%\usepackage[no-math]{fontspec} % https://www.ptt.cc/bbs/LaTeX/M.1505577244.A.952.html
+\usepackage{xeCJK}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{musixtex}
+\usepackage{enumitem}
+\usepackage{algorithm,algorithmic}
+
+
+\renewcommand\qedsymbol{$\blacktriangleleft$}
+
+%\setCJKmainfont{新細明體}
+\setCJKmainfont{標楷體}
+
+\usetheme{Malmoe}
+\usecolortheme{dolphin}
+\usefonttheme[onlymath]{serif}
+%\usefonttheme{serif} % professionalfonts
+% default, serif, professionalfonts, structurebold, structureitalicserif, structuresmallcapsserif
+\useoutertheme{miniframes} %{infolines}
+\usepackage{xmpmulti}
+
+\linespread{1.2}
+
+%\newenvironment{num}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{itemize}}
+%{\end{itemize}}
+
+%\newenvironment{enu}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{enumerate}}
+%{\end{enumerate}}
+
+%-------------------------------------------------------------
+\title{離散數學 107-2}
+\subtitle{Homework 04}
+\author{姓名: 葉子瑄。學號: 107590041}
+\date{截止收件: 2019.05.08 (Wednesday) 23:59 pm \\ (week-12)}
+
+%-------------------------------------------------------------
+% page number
+% https://tex.stackexchange.com/questions/137022/how-to-insert-page-number-in-beamer-navigation-bars
+%-------------------------------------------------------------
+
+\setbeamertemplate{navigation symbols}
+{ \insertslidenavigationsymbol 
+  \insertframenavigationsymbol   
+  \insertsubsectionnavigationsymbol  
+  \insertsectionnavigationsymbol
+  \insertdocnavigationsymbol  
+  \insertbackfindforwardnavigationsymbol 
+  \hspace{1em}  
+  \usebeamerfont{footline} 
+  \insertframenumber
+  ~-~
+  \inserttotalframenumber
+}
+\setcounter{page}{1} 
+\pagenumbering{arabic} 
+
+
+%----------------------------------------------------------------------------------
+\begin{document}
+%----------------------------------------------------------------------------------
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\raggedright
+
+\begin{frame}
+% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge
+%\normalsize
+\footnotesize
+\tableofcontents
+\end{frame}
+	
+%----------------------------------------------------------------------------------
+\section{題目}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{題目與注意事項}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Homework 04 題目}
+	\fontsize{11pt}{12pt}\selectfont
+	\setlength{\baselineskip}{5pt}
+	\begin{columns}
+	\begin{column}{0.68\textwidth}
+	\begin{enumerate}[label=(Prob. \arabic*)]
+	\setlength\itemsep{0em}
+	\item page 259, chapter 4.1 Exercise 30
+	\item page 269, chapter 4.2 Exercise 4
+	\item page 290, chapter 4.3 Exercise 40(c)
+	\item page 301, chapter 4.4 Exercise 6(b)
+	\item page 301, chapter 4.4 Exercise 20	
+	\item page 308, chapter 4.5 Exercise 2
+	\item page 323, chapter 4.6 Example 26
+	\end{enumerate}
+	\end{column}
+	
+%	\begin{column}{0.45\textwidth}
+%	\begin{enumerate}[label=(Prob. \arabic*)]
+%	\addtocounter{enumi}{21}
+%	\setlength\itemsep{0em}
+%	\item page xx, chapter xx Exercises xx	
+%	\end{enumerate}
+%	\end{column}
+	
+	\end{columns}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{注意事項}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item 要熟悉 LaTeX 請翻閱 \ \htmladdnormallink{\color{blue}lshort}{https://ctan.org/tex-archive/info/lshort/}。
+	\item 記得在最後一頁，回報\selectfont \color{red}{完成作業小時數}(估算，取整數)\selectfont \color{black}{。}
+	\item 將檔案夾命名為 \texttt{hw04\_107590xxx}，將檔案夾壓縮成 \texttt{hw04\_107590xxx.zip}，上傳到\htmladdnormallink{\color{blue}網路學園}{http://elearning.ntut.edu.tw}。
+	\item LaTeX 數學符號請查此表: \ \htmladdnormallink{\color{blue}List of LaTeX mathematical symbols}{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols}。
+	\item 作業抄襲，以零分計。作業提供給他人抄襲，以零分計。
+	\item 作業遲交一週內成績打五折，作業遲交超過一週以零分計。
+	\end{enumerate}
+	\end{frame}
+
+%----------------------------------------------------------------------------------
+\section{作答區}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{解題}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 01 (4.1 Exercise 30)}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item $-3 \equiv 43~ (\text{mod}~ 23) $
+	\item $-12 \equiv 17~ (\text{mod}~ 29) $
+	\item $94 \equiv -11~ (\text{mod}~ 21) $
+	\end{enumerate}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 02 (4.2 Exercise 4)}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item $27$
+	\item $693$
+	\item $958$
+	\item $31775$
+	\end{enumerate}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 03 (4.3 Exercise 40(c))}
+	\fontsize{9}{10pt}\selectfont
+	\setlength{\baselineskip}{5pt}
+
+	(a)	The steps used by the Euclidean algorithm to find $\text{gcd}(35, 78)$ are
+	\begin{eqnarray*}
+	78 & = & 2 · 35 + 8 \\
+	35 & = & 4 · 8 + 3 \\
+	8 & = & 2 · 3 + 2  \\
+	3 & = & 1 · 2 + 1 \\
+	2 & = & 2 · 1
+	\end{eqnarray*}
+
+    \vspace*{0.1cm}
+    
+    (b) Then we need to work our way back up
+	\begin{eqnarray*}
+	1 & = & 3 − 2                  \\
+	~ & = & 3 − (8 - 2 · 3)        =  3 · 3 − 8 \\
+	~ & = & 3 · (35 - 4 · 8) -8 =  3 · 35 − 13 · 8 \\
+	~ & = & 3 · 35 − 13 · (78 - 2 · 35)  =  29 · 35 − 13 · 78
+	\end{eqnarray*}
+	\end{frame}
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 04 (4.4 Example 6(b))}
+	\fontsize{7}{8pt}\selectfont
+	\setlength{\baselineskip}{5pt}
+
+	(a)	First we go through the Euclidean algorithm computation that $gcd(34, 89) = 1$:
+	\begin{eqnarray*}
+	89 & = & 2 · 34 + 21 \\
+	34 & = & 1 · 21 + 13  \\
+	21 & = & 1 · 13 + 8  \\
+	13 & = & 1 · 8 + 5  \\
+	 8 & = & 1 · 5 + 3  \\
+	 5 & = & 1 · 3 + 2  \\
+	 3 & = & 1 · 2 + 1 \\
+	 2 & = & 2 · 1 
+	\end{eqnarray*}
+
+
+    (b) Then we reverse our steps and write 1 as the desired linear combination:
+    
+	\begin{eqnarray*}
+	1 & = & 3 − 2 \\
+	~ & = & 3 - (5 - 3) = 2 · 3 - 5  \\
+	~ & = & 2 · (8 - 5) - 5 = 2 · 8 - 3 · 5  \\
+	~ & = & 2 · 8 - 3 · (13 - 8) = 5 · 8 - 3 · 13  \\
+	~ & = & 5 · (21 - 13) - 3 · 13 = 5 · 21 - 8 · 13  \\
+	~ & = & 5 · 21 - 8 · (34 - 21) = 13 · 21 - 8 · 34  \\
+	~ & = & 13 · (89 - 2 · 34) - 8 · 34 = 13 · 89 - 34 · 34
+	\end{eqnarray*}
+	
+    Thus s = -34, so an inverse of 34 modulo 89 is -34, which can also be written as 55.
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 05 (4.4 Exercises 20)}
+	\fontsize{10}{10pt}\selectfont
+	The answer will be unique modulo $3 · 4 · 5 = 60$.\\
+	$a_1 = 2, m_1 = 3$\\ 
+	$a_2 = 1, m_2 = 4$\\ 
+	$a_3 = 3, m_3 = 5$\\ 
+    \vspace*{0.1cm}
+	$m = m_1 · m_2 · m_3 =60$ \\
+    $M_1 = 60/3 = 20$\\
+    $M_2 = 60/4 = 15$\\
+    $M_3 = 60/5 = 12$\\
+    \vspace*{0.1cm}
+	Then we need to find inverses $y_i$ of $M_i$ modulo $m_i$\\
+    $y_1 = 2$\\
+    $y_2 = 3$\\
+    $y_3 = 3$\\
+    $ x =  a_1 M_1 y_1 + a_2 M_2 y_2 + a_3 M_3 y_3 = 233 \equiv 53 \pmod{60}$\\
+    So the solutions are all integers of the form $53 + 60k$, where $k$ is an integer.
+	\end{frame}
+	
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 06 (4.5 Exercises 2)}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item $58$
+	\item $60$
+	\item $52$
+	\item $3$
+	\end{enumerate}
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 7 (4.6 Exercises 22)}
+	\fontsize{11}{12pt}\selectfont
+	First we find $d = 2753$, the inverse of $e = 17~modulo~52 · 60$. \\
+ 
+    \vspace*{0.3cm}
+    
+	Next we compute $c^d \pmod{n}$ for each of the four given numbers:\\ $3185^{2753} \pmod{3233} = 1816$ (which are the letters SQ),\\
+$2038^{2753} \pmod{3233} = 2008$ (which are the letters UI),\\
+$2460^{2753} \pmod{3233} = 1717$ (which are the letters RR), and \\
+$2550^{2753} \pmod{3233} = 0411$ (which are the letters EL).\\
+
+    \vspace*{0.3cm}
+    
+    The message is SQUIRREL.
+	\end{frame}
+	%----------------------------------------------------------------------------------
+
+		
+%----------------------------------------------------------------------------------
+\section{完成作業小時數}
+%----------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------	
+\begin{frame}
+\frametitle{完成作業小時數}
+\centerline{\fontsize{16}{16pt}\selectfont{\color{blue}完成作業小時數:\color{red}共\underline{   3   }小時\color{blue}(估算，取整數)}}	
+\end{frame}
+%----------------------------------------------------------------------------------	
+
+%----------------------------------------------------------------------------------
+\end{document}
+%----------------------------------------------------------------------------------
+

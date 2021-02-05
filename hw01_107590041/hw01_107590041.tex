@@ -1,0 +1,317 @@
+\documentclass[14pt,hyperref={bookmarks=false}]{beamer}
+
+%\usepackage[no-math]{fontspec} % https://www.ptt.cc/bbs/LaTeX/M.1505577244.A.952.html
+\usepackage{xeCJK}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{musixtex}
+\usepackage{enumitem}
+
+\renewcommand\qedsymbol{$\blacktriangleleft$}
+
+%\setCJKmainfont{新細明體}
+\setCJKmainfont{標楷體}
+
+\usetheme{Malmoe}
+\usecolortheme{dolphin}
+\usefonttheme[onlymath]{serif}
+%\usefonttheme{serif} % professionalfonts
+% default, serif, professionalfonts, structurebold, structureitalicserif, structuresmallcapsserif
+\useoutertheme{miniframes} %{infolines}
+\usepackage{xmpmulti}
+
+\linespread{1.2}
+
+%\newenvironment{num}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{itemize}}
+%{\end{itemize}}
+
+%\newenvironment{enu}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{enumerate}}
+%{\end{enumerate}}
+
+%-------------------------------------------------------------
+\title{離散數學 107-2}
+\subtitle{Homework 01}
+\author{姓名: 葉子瑄。學號: 107590041}
+\date{截止收件: 2019.03.20 (Wednesday) 23:59 pm Week-05}
+
+%-------------------------------------------------------------
+% page number
+% https://tex.stackexchange.com/questions/137022/how-to-insert-page-number-in-beamer-navigation-bars
+%-------------------------------------------------------------
+
+\setbeamertemplate{navigation symbols}
+{ \insertslidenavigationsymbol 
+  \insertframenavigationsymbol   
+  \insertsubsectionnavigationsymbol  
+  \insertsectionnavigationsymbol
+  \insertdocnavigationsymbol  
+  \insertbackfindforwardnavigationsymbol 
+  \hspace{1em}  
+  \usebeamerfont{footline} 
+  \insertframenumber
+  ~-~
+  \inserttotalframenumber
+}
+\setcounter{page}{1} 
+\pagenumbering{arabic} 
+
+
+%----------------------------------------------------------------------------------
+\begin{document}
+%----------------------------------------------------------------------------------
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\raggedright
+
+\begin{frame}
+% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge
+%\normalsize
+\footnotesize
+\tableofcontents
+\end{frame}
+	
+%----------------------------------------------------------------------------------
+\section{題目}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{題目與注意事項}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Homework 01 題目}
+	\fontsize{6pt}{7pt}\selectfont
+	\setlength{\baselineskip}{5pt}
+	\begin{columns}
+	\begin{column}{0.49\textwidth}
+	\begin{enumerate}[label=(Prob. \arabic*)]
+	\setlength\itemsep{0em}
+	\item page 16, chapter 1.1 Exercise 34(e)小題
+	\item page 24, chapter 1.2 Exercise 8
+	\item page 38, chapter 1.3 Exercise 10(c)小題
+	\item page 58, chapter 1.4 Exercise 28
+	\end{enumerate}
+	\end{column}
+	
+	\begin{column}{0.49\textwidth}
+	\begin{enumerate}[label=(Prob. \arabic*)]
+	\addtocounter{enumi}{4}
+	\setlength\itemsep{0em}
+	\item page 69, chapter 1.5 Exercise 10
+	\item page 82, chapter 1.6 Exercise 6
+	\item page 96, chapter 1.7 Exercise 30
+	\item page 113, chapter 1.8 Exercise 6
+	\end{enumerate}
+	\end{column}
+	
+	\end{columns}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{注意事項}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item 要熟悉 LaTeX 請翻閱 \ \htmladdnormallink{\color{blue}lshort}{https://ctan.org/tex-archive/info/lshort/}。
+	\item 記得在最後一頁，回報\selectfont \color{red}{完成作業小時數}(估算，取整數)\selectfont \color{black}{。}
+	\item 將檔案夾命名為 \texttt{hw01\_107820xxx}，將檔案夾壓縮成 \texttt{hw01\_107820xxx.zip}，上傳到\htmladdnormallink{\color{blue}網路學園}{http://elearning.ntut.edu.tw}。
+	\item LaTeX 數學符號請查此表: \ \htmladdnormallink{\color{blue}List of LaTeX mathematical symbols}{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols}。
+	\item 作業抄襲，以零分計。作業提供給他人抄襲，以零分計。
+	\item 作業遲交一週內成績打五折，作業遲交超過一週以零分計。
+	\end{enumerate}
+	\end{frame}
+
+%----------------------------------------------------------------------------------
+\section{作答區}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{解題}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 1 (1.1 Exercise 34(e)小題)}
+	\fontsize{10}{10pt}\selectfont
+	% https://www.tablesgenerator.com/
+	\begin{table}[]
+	\centering
+	\caption{Truth Table for the Compound Propositions}
+	\label{t1}
+	\begin{tabular}{c|c|c|c|c|c}
+	\hline
+	 $p$ & $q$ & $\neg p$ & $(q \rightarrow \neg p)$ & $(p \leftrightarrow q)$ & $ (q \rightarrow \neg p) \leftrightarrow (p \leftrightarrow q)$  \\ \hline
+	 T  & T & F & F & T & F \\ % 作答後，記得移除 作答 二字。
+	 T  & F & F & T & F & F \\ 
+	 F  & T & T & T & F & F \\ 
+	 F  & F & T & T & T & T \\ 
+	\hline
+	\end{tabular}
+	\end{table}
+
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 2 (1.2 Exercise 8)}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item $r \land \neg p$
+	\item $q \rightarrow (p \land r)$ % 作答後，記得移除 作答 二字。
+	\item $\neg q \rightarrow \neg r$
+	\item $(\neg p \land r) \rightarrow q$
+	\end{enumerate}
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 3 (1.3 Exercise 10(c)小題)}
+	\fontsize{10}{10pt}\selectfont
+	\begin{proof}
+	\begin{eqnarray*}
+	  (p \rightarrow \neg q) \rightarrow (\neg p \rightarrow q) & \equiv & \neg (p \rightarrow \neg q) \lor (\neg p \rightarrow q ) \\
+	  & \equiv & \neg (\neg p \lor \neg q) \lor (\neg p \rightarrow q  ) \\ % 作答後，記得移除 \text{作答} 。
+	  & \equiv & (p \land q) \lor( p \lor q ) \\
+	  & \equiv & (p \lor q ) \\
+	  & \equiv & \neg p \rightarrow q
+	\end{eqnarray*}
+	\end{proof}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 4 (1.4 Exercise 28)}
+	\fontsize{10}{10pt}\selectfont
+	let $R(x)$ be “$x$ is in the correct place,”\\
+    let $E(x)$ be “$x$ is in excellent condition,”\\
+    let $T(x)$ be “$x$ is a [or your] tool,”\\ and let the domain of discourse be all things.
+	\begin{enumerate}[label=(\alph*)]
+	\item $\exists x ~ \neg R(x)$
+	\item $\forall x ~ (R(x) \land E(x)) $ % 作答後，記得移除 \text{作答} 。
+	\item $\forall x ~ T(x)(R(x) \land E(x)) $
+	\item $\exists x ~( \neg(R(x) \land E(x)) $
+	\item $\neg \exists x ~ T(x)(R(x)\land \neg E(x)) $
+	\end{enumerate}
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 5 (1.5 Exercise 10)}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item $\forall x ~F(x, \textrm{Fred})$ 
+	\item $\forall y ~F(\textrm{Evelyn},y} $ % 作答後，記得移除 \text{作答} 。
+	\item $ \forall x ~ \exists y ~ F(x,y) $ 
+	\item $ \neg \exists x ~ \forall y ~ F(x,y) $ 
+	\item $ \exists x ~ \forall y ~ F(x,y) $ 
+	\item $ \neg \exists x ~ (F(x,\textrm{Fred})\land F(x,\textem{Jerry}))$
+	\item $ \exists y ~ \exists z ~ (F(\textrm{Nancy},y)\land (F(\textrm{Nancy},z)\land x \ne y \land\forall w ~ (F(\textrm{Nancy},w)\rightarrow(w=y \lor w=z))) $ 
+	\item $ \exists y ~ (\forall x ~ F(x,y)\land (\forall z ~((\forall w~F(w,z))\rightarrow z=y)) $ 
+	\item $ \forall x ~ \neg F(x,x)  $ 
+	\item $ \exists x ~ \exists y ~ (F(x,y)\land(\forall z ~ (F(x,z)\rightarrow z=y \lor z=x ))$ 
+	\end{enumerate}
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 6 (1.6 Exercise 6)}
+	\fontsize{8}{8pt}\selectfont
+	
+let $r$ be the proposition "It rains," \\
+let $f$ be the proposition "It is foggy," \\
+let $s$ be the proposition "The sailing race will be held," \\
+let $l$ be the proposition "The life saving demonstration will go on," and \\
+let $t$ be the proposition "The trophy will be awarded." \\
+
+	\begin{table}[]
+	\centering
+	\begin{tabular}{|c|l|l|}
+	\hline
+	% 作答後，記得移除 \text{作答} 。
+ Step & 推導                 & Reason \\ \hline
+	1 & $ \neg t $           & Hypothesis \\
+	2 & $ s \rightarrow t $  & Hypothesis \\
+	3 & $ \text{} $       & Modus tollens using (1) and (2) \\
+	4 & $ (\neg r \lor \neg f) \rightarrow (s \land l)$ & Hypothesis \\
+	5 & $ \neg (s \land l)\rightarrow\neg(\neg r \lor \neg f) $  & Contrapositive of (4) \\
+	6 & $ \(neg s \lor \neg l)\rightarrow(r \land f) $  & De Morgan's law and double negative \\
+	7 & $ \(\neg s \lor \neg l) $  & Addition, using (3) \\
+	8 & $ \(r \land f) $  & Modus ponens using (6) and (7) \\
+	9 & $ \r $  & Simplification using (8) \\ \hline
+	\end{tabular}
+	\end{table}
+	\end{frame}
+
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 7 (1.7 Exercise 30)}
+	\fontsize{10}{10pt}\selectfont
+	
+	\begin{columns}
+	
+	\begin{column}{0.48\textwidth}
+	For the "if" part, there are two cases.\\
+	If $m = n$ \\
+	$m - n = 0$ \\ % 作答後，記得移除 作答 二字。
+	If $m = -n$\\
+	$m + n = 0$ \\
+	\end{column}
+	
+	\begin{column}{0.45\textwidth}
+	For the "only if" part, we suppose that $m^2 = n^2$.\\
+	$(m - n) (m + n) = 0$ \\
+	\end{column}
+	\end{columns}
+	
+	\end{frame}
+
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 8 (1.8 Exercise 6)}
+	\fontsize{10}{10pt}\selectfont
+    題目:　Use a proof by cases to show that $\text{min}(a, \text{min}(b, c)) =　\text{min}(\text{min}(a, b), c)$ whenever $a$, $b$, and $c$ are real numbers.
+	
+	%作答後請移除前述 請作答 這三個字
+	\begin{proof}
+	Case 1: If a is smallest.\\
+	$ a \le \text{min(b,c)) , a \le b , a \le c $ \\ % 作答後，記得移除 作答 二字。
+	$ \text{min}(a,b）= a$\\
+	$ a = \text{min}(\text{min}(a,b),c)=\text{min}(a,c)=a $\\
+	Case 2: If a is smallest.\\
+	$ b \le \text{min(b,c)) , b \le b , b \le c $ 
+	$ \text{min}(a,b）= b$\\
+	$ b = \text{min}(\text{min}(a,b),c)=\text{min}(b,c)=b $\\
+	Case 3: If c is smallest.\\
+	$ c \le \text{min(b,c)) , c \le b , c \le c $ 
+	$ c \le \text{min}(a,b)$\\
+	$ c = \text{min}(\text{min}(a,b),c)=c $\\
+	\end{proof}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+
+		
+%----------------------------------------------------------------------------------
+\section{完成作業小時數}
+%----------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------	
+\begin{frame}
+\frametitle{完成作業小時數}
+\centerline{\fontsize{16}{16pt}\selectfont{\color{blue}完成作業小時數:\color{red}共\underline{   5   }小時\color{blue}(估算，取整數)}}	
+\end{frame}
+%----------------------------------------------------------------------------------	
+
+%----------------------------------------------------------------------------------
+\end{document}
+%----------------------------------------------------------------------------------
+

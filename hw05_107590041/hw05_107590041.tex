@@ -1,0 +1,286 @@
+\documentclass[14pt,hyperref={bookmarks=false}]{beamer}
+
+%\usepackage[no-math]{fontspec} % https://www.ptt.cc/bbs/LaTeX/M.1505577244.A.952.html
+\usepackage{xeCJK}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{musixtex}
+\usepackage{enumitem}
+\usepackage{algorithm,algorithmic}
+
+
+\renewcommand\qedsymbol{$\blacktriangleleft$}
+
+%\setCJKmainfont{新細明體}
+\setCJKmainfont{標楷體}
+
+\usetheme{Malmoe}
+\usecolortheme{dolphin}
+\usefonttheme[onlymath]{serif}
+%\usefonttheme{serif} % professionalfonts
+% default, serif, professionalfonts, structurebold, structureitalicserif, structuresmallcapsserif
+\useoutertheme{miniframes} %{infolines}
+\usepackage{xmpmulti}
+
+\linespread{1.2}
+
+%\newenvironment{num}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{itemize}}
+%{\end{itemize}}
+
+%\newenvironment{enu}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{enumerate}}
+%{\end{enumerate}}
+
+%-------------------------------------------------------------
+\title{離散數學 107-2}
+\subtitle{Homework 05}
+\author{姓名: 葉子瑄。學號: 107590041}
+\date{截止收件: 2019.05.15 (Wednesday) 23:59 pm \\ (week-13)}
+
+%-------------------------------------------------------------
+% page number
+% https://tex.stackexchange.com/questions/137022/how-to-insert-page-number-in-beamer-navigation-bars
+%-------------------------------------------------------------
+
+\setbeamertemplate{navigation symbols}
+{ \insertslidenavigationsymbol 
+  \insertframenavigationsymbol   
+  \insertsubsectionnavigationsymbol  
+  \insertsectionnavigationsymbol
+  \insertdocnavigationsymbol  
+  \insertbackfindforwardnavigationsymbol 
+  \hspace{1em}  
+  \usebeamerfont{footline} 
+  \insertframenumber
+  ~-~
+  \inserttotalframenumber
+}
+\setcounter{page}{1} 
+\pagenumbering{arabic} 
+
+
+%----------------------------------------------------------------------------------
+\begin{document}
+%----------------------------------------------------------------------------------
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\raggedright
+
+\begin{frame}
+% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge
+%\normalsize
+\footnotesize
+\tableofcontents
+\end{frame}
+	
+%----------------------------------------------------------------------------------
+\section{題目}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{題目與注意事項}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Homework 05 題目}
+	\fontsize{11pt}{12pt}\selectfont
+	\setlength{\baselineskip}{5pt}
+	\begin{columns}
+	\begin{column}{0.68\textwidth}
+	\begin{enumerate}[label=(Prob. \arabic*)]
+	\setlength\itemsep{0em}
+	\item page 350, chapter 5.1 Exercise 6
+	\item page 363, chapter 5.2 Exercise 6
+	\item page 379, chapter 5.3 Exercise 26 
+	\item page 391, chapter 5.4 Exercise 8
+	\end{enumerate}
+	\end{column}
+	
+%	\begin{column}{0.45\textwidth}
+%	\begin{enumerate}[label=(Prob. \arabic*)]
+%	\addtocounter{enumi}{21}
+%	\setlength\itemsep{0em}
+%	\item page xx, chapter xx Exercises xx	
+%	\end{enumerate}
+%	\end{column}
+	
+	\end{columns}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{注意事項}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item 要熟悉 LaTeX 請翻閱 \ \htmladdnormallink{\color{blue}lshort}{https://ctan.org/tex-archive/info/lshort/}。
+	\item 記得在最後一頁，回報\selectfont \color{red}{完成作業小時數}(估算，取整數)\selectfont \color{black}{。}
+	\item 將檔案夾命名為 \texttt{hw05\_107590xxx}，將檔案夾壓縮成 \texttt{hw05\_107590xxx.zip}，上傳到\htmladdnormallink{\color{blue}網路學園}{http://elearning.ntut.edu.tw}。
+	\item LaTeX 數學符號請查此表: \ \htmladdnormallink{\color{blue}List of LaTeX mathematical symbols}{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols}。
+	\item 作業抄襲，以零分計。作業提供給他人抄襲，以零分計。
+	\item 作業遲交一週內成績打五折，作業遲交超過一週以零分計。
+	\end{enumerate}
+	\end{frame}
+
+%----------------------------------------------------------------------------------
+\section{作答區}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{解題}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 01 (5.1 Exercise 6)}
+	\fontsize{10}{10pt}\selectfont
+	Prove ~~~$1 · 1! + 2 · 2! + ... + n · n! = (n + 1)! - 1 $\\
+    \vspace*{0.1cm}		
+
+	For all $n \geq 1 $, $ P(n) = (n + 1)! - 1 $ \\
+    \vspace*{0.1cm}	
+
+	Basis step:\\
+    %\vspace*{0.3cm}
+	$n = 1$, $ P(1) $ is true, since ~~~ $ 1 · 1! = (1 + 1)! - 1 = (2)! - 1 $ \\
+	
+    \vspace*{0.1cm}
+
+	Inductive step:\\
+    %\vspace*{0.3cm}
+    Inductive hypothesis, assume $ P(k) $ holds for an arbitrary positive integer $k$. ~~~  $1 · 1! + 2 · 2! + ... + k · k! = (k + 1)! - 1 $\\
+    Add $ (k + 1) · (k + 1)!$ to both sides of the equation in $ P(k) $, we obtain
+    %\vspace*{0.1cm}
+	\begin{eqnarray*}
+	1 · 1!  + ... + k · k! + (k + 1) · (k + 1)!  & = & (k + 1)! - 1 + (k + 1) · (k + 1)!                  \\
+	~ & = & (k + 1)!(1 + k + 1)! - 1\\
+	~ & = & (k + 1)!(k + 2)! - 1\\
+	~ & = & (k + 2)! - 1
+	\end{eqnarray*}
+    %\vspace*{-0.5cm}	
+	By mathematical induction, $ P(n) $ is true for all integer $n$ with $n \geq 1 $.
+    
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 02 (5.2 Exercise 6(a))}
+	\fontsize{9}{10pt}\selectfont
+	Q: Determine which amounts of postage can be formed using just 3-cent and 10-cent stamps.\\
+    \vspace*{0.1cm}
+    A: We can form the following amounts of postage as indicated:\\
+    \vspace*{0.3cm}
+	\begin{columns}
+	\begin{column}{0.4\textwidth}
+    $ 3 = 3$\\
+    $ 6 = 3 + 3$\\
+    $ 9 = 3 + 3 + 3$\\
+    $10 = 10$\\
+    $12 = 3 + 3 + 3 + 3$\\
+    $13 = 10 + 3$\\
+	\end{column}
+	\begin{column}{0.4\textwidth}
+    $15 = 3 + 3 + 3 + 3 + 3$\\
+    $16 = 10 + 3 + 3$\\
+    $18 = 3 + 3 + 3 + 3  + 3$\\
+    $19 = 10 + 3 + 3 + 3$\\
+    $20 = 10 + 10$\\
+	\end{column}
+	\end{columns}
+    \vspace*{0.3cm}
+    
+    By having considered all the combinations, we know that the gaps in this list cannot be filled.\\ We claim that we can form all amounts of postage greater than or equal to \underline{18} cents using just 3-cent and 10-cent stamps.
+    
+	\end{frame}
+
+%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 02 (5.2 Exercise 6(b))}
+	\fontsize{10}{10pt}\selectfont
+	Q: Prove your answer to (a) using the principle of mathematical
+induction.\\
+    \vspace*{0.1cm}
+    A: Let $P(n)$ be the statement that we can form n cents of postage using just 3-cent and 10-cent stamps. We want to prove that $P(n)$ is true for all $n \geq 18$.\\
+\vspace*{0.1cm}
+Basis step: $n = 18 = 3 + 3 + 3 + 3 + 3 + 3$. \\
+\vspace*{0.1cm}
+Inductive step: Assume that we can form $k$ cents of postage (the inductive hypothesis); we will show how to form $k + 1$ cents of postage. If the $k$ cents included two 10-cent stamps, then replace them by \underline{seven} 3-cent stamps.\\
+Otherwise, $k$ cents was formed either from just 3-cent stamps, or from one 10-cent stamp and $k-10$ cents in 3-cent stamps. Because $k \geq 18$, there must be at least \underline{three} 3-cent stamps involved in either case. Replace \underline{three} 3-cent stamps by \underline{one} 10-cent stamp, and we have formed $k + 1$ cents in postage.
+	\end{frame}
+	
+%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 02 (5.2 Exercise 6(c))}
+	\fontsize{9}{9pt}\selectfont
+	Q: Prove your answer to (a) using strong induction. How does the inductive hypothesis in this proof differ from that in the inductive hypothesis for a proof using mathematical induction?\\
+    \vspace*{0.1cm}
+    A: Let $P(n)$ be the statement that we can form n cents of postage using just 3-cent and 10-cent stamps. We want to prove that $P(n)$ is true for all $n \geq 18$. 
+
+Basis step:\\ To prove that $P(n)$ is true for all $n \geq 18$, we note for the basis step that from part (a), $P(n)$ is true for $n = 18, 19, 20$. \\
+
+Inductive step:\\ Assume the inductive hypothesis, that $P(j)$ is true for all $j$ with $18 \leq j \leq k$ , where $k$ is a fixed integer greater than or equal to 20. We want to show that $P(k + 1)$ is true. Because $k - 2 \geq 18$, we know that $P(k - 2)$ is true, that is, that we can form $k - 2$ cents of postage. Put one more \underline{3}-cent stamp on the envelope, and we have formed $k + 1$ cents of postage, as desired.\\
+    
+In this proof our inductive hypothesis included all values between 18 and $k$ inclusive, and that enabled us to jump back three steps to a value for which we knew how to form the desired postage.
+	\end{frame}	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 03 (5.3 Exercise 26)}
+	\fontsize{11}{12pt}\selectfont
+	\setlength{\baselineskip}{5pt}
+	% 請作答
+
+	(a)	Basis step : $1 \equiv 1$ ( mod 4 )\\
+		Inductive step : $n \equiv 1 $ ( mod 4 )\\
+		then $3n + 2 \equiv 3 · 1 + 2 = 5 \equiv 1$ (mod 4) and $n^2 \equiv 1^2 = 1$ (mod 4)\\ 
+
+    \vspace*{0.5cm}
+    
+    (b)One example is that $9 \notin S $. Because 9 is not the  form $3n + 2$, the only way $S$ would be via 9= $3^2$, but $3 \notin S$ because $3 \neq 1$ (mod 4)\\
+
+	\end{frame}
+
+%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 4 (5.4 Exercises 8)}
+	\fontsize{10}{11pt}\selectfont
+	
+% https://en.wikibooks.org/wiki/LaTeX/Algorithms
+\begin{algorithm}[H]
+  \algsetup{linenosize=\tiny}
+  \small
+\begin{algorithmic}[1]
+
+\IF{n = 1}
+    \RETURN 1
+\ELSE
+    \RETURN sum\_of\_first($n$ - 1) + $n$
+\ENDIF
+\end{algorithmic}
+\caption{\small procedure sum\_of\_first($n$: \text{positive integer}) }
+\label{alg:prime}
+\end{algorithm}
+% 請作答
+	\end{frame}
+	%----------------------------------------------------------------------------------
+
+		
+%----------------------------------------------------------------------------------
+\section{完成作業小時數}
+%----------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------	
+\begin{frame}
+\frametitle{完成作業小時數}
+\centerline{\fontsize{16}{16pt}\selectfont{\color{blue}完成作業小時數:\color{red}共\underline{   3   }小時\color{blue}(估算，取整數)}}	
+\end{frame}
+%----------------------------------------------------------------------------------	
+
+%----------------------------------------------------------------------------------
+\end{document}
+%----------------------------------------------------------------------------------
+

@@ -1,0 +1,282 @@
+\documentclass[14pt,hyperref={bookmarks=false}]{beamer}
+
+%\usepackage[no-math]{fontspec} % https://www.ptt.cc/bbs/LaTeX/M.1505577244.A.952.html
+\usepackage{xeCJK}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{musixtex}
+\usepackage{enumitem}
+\usepackage{algorithm,algorithmic}
+
+
+\renewcommand\qedsymbol{$\blacktriangleleft$}
+
+%\setCJKmainfont{新細明體}
+\setCJKmainfont{標楷體}
+
+\usetheme{Malmoe}
+\usecolortheme{dolphin}
+\usefonttheme[onlymath]{serif}
+%\usefonttheme{serif} % professionalfonts
+% default, serif, professionalfonts, structurebold, structureitalicserif, structuresmallcapsserif
+\useoutertheme{miniframes} %{infolines}
+\usepackage{xmpmulti}
+
+\linespread{1.2}
+
+%\newenvironment{num}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{itemize}}
+%{\end{itemize}}
+
+%\newenvironment{enu}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{enumerate}}
+%{\end{enumerate}}
+
+%-------------------------------------------------------------
+\title{離散數學 107-2}
+\subtitle{Homework 06}
+\author{姓名: 葉子瑄。學號: 107590041}
+\date{Handout: 2019.05.13 (week-13)}
+
+%-------------------------------------------------------------
+% page number
+% https://tex.stackexchange.com/questions/137022/how-to-insert-page-number-in-beamer-navigation-bars
+%-------------------------------------------------------------
+
+\setbeamertemplate{navigation symbols}
+{ \insertslidenavigationsymbol 
+  \insertframenavigationsymbol   
+  \insertsubsectionnavigationsymbol  
+  \insertsectionnavigationsymbol
+  \insertdocnavigationsymbol  
+  \insertbackfindforwardnavigationsymbol 
+  \hspace{1em}  
+  \usebeamerfont{footline} 
+  \insertframenumber
+  ~-~
+  \inserttotalframenumber
+}
+\setcounter{page}{1} 
+\pagenumbering{arabic} 
+
+
+%----------------------------------------------------------------------------------
+\begin{document}
+%----------------------------------------------------------------------------------
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\raggedright
+
+\begin{frame}
+% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge
+%\normalsize
+\footnotesize
+\tableofcontents
+\end{frame}
+	
+%----------------------------------------------------------------------------------
+\section{題目}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{題目與注意事項}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Homework 06 題目}
+	\fontsize{10pt}{11pt}\selectfont
+	\setlength{\baselineskip}{5pt}
+	\begin{columns}
+	\begin{column}{0.68\textwidth}
+	\begin{enumerate}[label=(Prob. \arabic*)]
+	\setlength\itemsep{0em}
+	\item page 418, chapter 6.1 Exercise 36
+	\item page 427, chapter 6.2 Exercise 38
+	\item page 435, chapter 6.3 Exercise 20
+	\item page 444, chapter 6.4 Exercise 16
+	\item page 455, chapter 6.5 Exercise 12
+	\item page 461, chapter 6.6 Exercise 6
+
+	\end{enumerate}
+	\end{column}
+	
+%	\begin{column}{0.45\textwidth}
+%	\begin{enumerate}[label=(Prob. \arabic*)]
+%	\addtocounter{enumi}{21}
+%	\setlength\itemsep{0em}
+%	\item page xx, chapter xx Exercises xx	
+%	\end{enumerate}
+%	\end{column}
+	
+	\end{columns}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{注意事項}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item 要熟悉 LaTeX 請翻閱 \ \htmladdnormallink{\color{blue}lshort}{https://ctan.org/tex-archive/info/lshort/}。
+	\item 記得在最後一頁，回報\selectfont \color{red}{完成作業小時數}(估算，取整數)\selectfont \color{black}{。}
+	\item 將檔案夾命名為 \texttt{hw06\_107820xxx}，將檔案夾壓縮成 \texttt{hw06\_107820xxx.zip}，上傳到\htmladdnormallink{\color{blue}網路學園}{http://elearning.ntut.edu.tw}。
+	\item LaTeX 數學符號請查此表: \ \htmladdnormallink{\color{blue}List of LaTeX mathematical symbols}{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols}。
+	\item 作業抄襲，以零分計。作業提供給他人抄襲，以零分計。
+	\item 作業遲交一週內成績打五折，作業遲交超過一週以零分計。
+	\end{enumerate}
+	\end{frame}
+
+%----------------------------------------------------------------------------------
+\section{作答區}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{解題}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 01 (6.1 Exercise 36)}
+	\fontsize{12}{16pt}\selectfont
+	There are 2 possible image,since the image has to be 0 or 1.\\
+	 And the domain contains $n$ elements.\\
+	 Terefore,there are $2^n$ different functions.\\
+	
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 02 (6.2 Exercise 38)}
+	\fontsize{12}{16pt}\selectfont
+	There are six computers, and each computer connected to at least one of the other five computers, this means the possible connection for each computer is: 1, 2, 3, 4, 5, by using the Pigeon and Pigeonhole Principle, let these 5 possible connections be the Pigeonholes, and let the six computers be the Pigeons, therefore there are must at least two computers have same number of connections.\\
+	
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 03 (6.3 Exercise 20)}
+	\fontsize{10}{10pt}\selectfont
+	% 請作答
+	\begin{enumerate}[label=(\alph*)]
+	\item $C(10,3)=120$
+	\item $C(10,4)+C(10,3)+C(10,2)+C(10,1)+C(10,0)=210+120+45+10+1=386$
+	\item $C(10,7)+C(10+8)+C(10,9)+C(10,10)=120+45+10+1=176$
+	\item $ C(10,3)+C(10,4)+C(10,5)+C(10,6)+C(10,7)+C(10+8)+C(10,9)+C(10,10)=120+210+252+210+120+45+10+1=968$
+	\end{enumerate}
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 04 (6.4 Exercise 16)}
+	\fontsize{10}{10pt}\selectfont	
+	Pascal  identity:\begin{pmatrix}
+    n+1\\
+	k
+\end{pmatrix}=\begin{pmatrix}
+    n\\
+	k-1
+\end{pmatrix}+\begin{pmatrix}
+    n\\
+	k
+\end{pmatrix}\\
+	\vspace*{0.3cm}
+	\begin{columns}
+	\begin{column}{0.4\textwidth}	
+    \begin{pmatrix}
+    11\\
+	1
+\end{pmatrix} = 1+10=11 \\
+	\begin{pmatrix}
+	11\\
+	2
+\end{pmatrix} = 10+45=55 \\
+	\begin{pmatrix}
+	11\\
+	3
+\end{pmatrix} = 45+120=165 \\
+	\begin{pmatrix}
+	11\\
+	4
+\end{pmatrix} = 120+210+330 \\
+	\begin{pmatrix}
+	11\\
+	5
+\end{pmatrix} = 210+252=462 \\
+	\end{column}
+	\begin{column}{0.4\textwidth}
+    \begin{pmatrix}
+	11\\
+	6
+\end{pmatrix} = 252+210=462 \\
+	\begin{pmatrix}
+	11\\
+	7
+\end{pmatrix} = 210+120=330 \\
+	\begin{pmatrix}
+	11\\
+	8
+\end{pmatrix} = 120+45=165 \\
+	\begin{pmatrix}
+	11\\
+	9
+\end{pmatrix} = 45+10=55 \\
+	\begin{pmatrix}
+	11\\
+	10
+\end{pmatrix} = 10+1=11 \\
+	\end{column}
+	\end{columns}
+    \vspace*{0.3cm}
+	The row of \begin{pmatrix}
+	11\\
+	k
+\end{pmatrix}is 1 11 55 165 330 462 462 330 165 55 11 1\\
+	
+	\end{frame}
+	
+    %----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 05 (6.5 Exercise 12)}
+	\fontsize{10}{10pt}\selectfont
+	 pennies+nickels+dimes+quarters+ half dollars=20\\
+	 Therefore by Theorem 2 the answer is C(4+20, 20) = C(24, 20)  = 10626.\\
+
+	\end{frame}
+	
+    %----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 06 (6.6 Exercise 6)}
+	\fontsize{10}{10pt}\selectfont
+	% 請作答\\
+	\begin{enumerate}[label=(\alph*)]
+	\item 1423
+	\item 51234
+	\item 13254
+	\item 612354
+	\item 1623574
+	\item 23587461
+	\end{enumerate}
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+
+		
+%----------------------------------------------------------------------------------
+\section{完成作業小時數}
+%----------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------	
+\begin{frame}
+\frametitle{完成作業小時數}
+\centerline{\fontsize{16}{16pt}\selectfont{\color{blue}完成作業小時數:\color{red}共\underline{   5   }小時\color{blue}(估算，取整數)}}	
+\end{frame}
+%----------------------------------------------------------------------------------	
+
+%----------------------------------------------------------------------------------
+\end{document}
+%----------------------------------------------------------------------------------
+

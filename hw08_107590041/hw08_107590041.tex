@@ -1,0 +1,251 @@
+\documentclass[12pt,hyperref={bookmarks=false}]{beamer}
+
+%\usepackage[no-math]{fontspec} % https://www.ptt.cc/bbs/LaTeX/M.1505577244.A.952.html
+\usepackage{xeCJK}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{musixtex}
+\usepackage{enumitem}
+\usepackage{algorithm,algorithmic}
+
+
+\renewcommand\qedsymbol{$\blacktriangleleft$}
+
+%\setCJKmainfont{新細明體}
+\setCJKmainfont{標楷體}
+
+\usetheme{Malmoe}
+\usecolortheme{dolphin}
+\usefonttheme[onlymath]{serif}
+%\usefonttheme{serif} % professionalfonts
+% default, serif, professionalfonts, structurebold, structureitalicserif, structuresmallcapsserif
+\useoutertheme{miniframes} %{infolines}
+\usepackage{xmpmulti}
+
+\linespread{1.2}
+
+%\newenvironment{num}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{itemize}}
+%{\end{itemize}}
+
+%\newenvironment{enu}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{enumerate}}
+%{\end{enumerate}}
+
+%-------------------------------------------------------------
+\title{離散數學 107-2}
+\subtitle{Homework 08}
+\author{姓名: 葉子瑄。學號: 107590041}
+\date{Handout: 2019.05.21 (week-14)}
+
+%-------------------------------------------------------------
+% page number
+% https://tex.stackexchange.com/questions/137022/how-to-insert-page-number-in-beamer-navigation-bars
+%-------------------------------------------------------------
+
+\setbeamertemplate{navigation symbols}
+{ \insertslidenavigationsymbol 
+  \insertframenavigationsymbol   
+  \insertsubsectionnavigationsymbol  
+  \insertsectionnavigationsymbol
+  \insertdocnavigationsymbol  
+  \insertbackfindforwardnavigationsymbol 
+  \hspace{1em}  
+  \usebeamerfont{footline} 
+  \insertframenumber
+  ~-~
+  \inserttotalframenumber
+}
+\setcounter{page}{1} 
+\pagenumbering{arabic} 
+
+
+%----------------------------------------------------------------------------------
+\begin{document}
+%----------------------------------------------------------------------------------
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\raggedright
+
+\begin{frame}
+% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge
+%\normalsize
+\footnotesize
+\tableofcontents
+\end{frame}
+	
+%----------------------------------------------------------------------------------
+\section{題目}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{題目與注意事項}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Homework 08 題目}
+	\fontsize{10pt}{11pt}\selectfont
+	\setlength{\baselineskip}{5pt}
+	\begin{columns}
+	\begin{column}{0.68\textwidth}
+	\begin{enumerate}[label=(Prob. \arabic*)]
+	\setlength\itemsep{0em}
+	\item page 536, chapter 8.1 Exercise 2
+	\item page 552, chapter 8.2 Exercise 32
+	\item page 561, chapter 8.3 Exercise 8
+	\item page 575, chapter 8.4 Exercise 4(a)
+	\item page 584, chapter 8.5 Exercise 2
+	\item page 591, chapter 8.6 Exercise 8
+
+
+	\end{enumerate}
+	\end{column}
+	
+%	\begin{column}{0.45\textwidth}
+%	\begin{enumerate}[label=(Prob. \arabic*)]
+%	\addtocounter{enumi}{21}
+%	\setlength\itemsep{0em}
+%	\item page xx, chapter xx Exercises xx	
+%	\end{enumerate}
+%	\end{column}
+	
+	\end{columns}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{注意事項}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item 要熟悉 LaTeX 請翻閱 \ \htmladdnormallink{\color{blue}lshort}{https://ctan.org/tex-archive/info/lshort/}。
+	\item 記得在最後一頁，回報\selectfont \color{red}{完成作業小時數}(估算，取整數)\selectfont \color{black}{。}
+	\item 將檔案夾命名為 \texttt{hw08\_107820xxx}，將檔案夾壓縮成 \texttt{hw08\_107820xxx.zip}，上傳到\htmladdnormallink{\color{blue}網路學園}{http://elearning.ntut.edu.tw}。
+	\item LaTeX 數學符號請查此表: \ \htmladdnormallink{\color{blue}List of LaTeX mathematical symbols}{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols}。
+	\item 作業抄襲，以零分計。作業提供給他人抄襲，以零分計。
+	\item 作業遲交一週內成績打五折，作業遲交超過一週以零分計。
+	\end{enumerate}
+	\end{frame}
+
+%----------------------------------------------------------------------------------
+\section{作答區}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{解題}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 1 (8.1 Exercise 2)}
+	\fontsize{10}{10pt}\selectfont
+    (a) A permutation of a set with n elements consists of a choice of a first element (which can be done in n
+ways), followed by a permutation of a set with n − 1 elements. \\
+Therefore  P_0 = 1,P_1=1,Pn = nPn−1 ,~ &  when ~$n$\ge 2.\\
+    
+	\end{frame}
+	%---------------------------------------------------------------------------------	
+	\begin{frame}
+	\frametitle{Problem 1 (8.1 Exercise 2)}
+	\fontsize{10}{10pt}\selectfont
+    \vspace{0.3cm}
+	(b)\begin{eqnarray*}{\fontsize{10}{10pt}}
+    P_{n} & = & nP_{n} - 1\\
+	~ & = & n(n -1)P_{n-2}\\
+	~ & = & n(n -1)(n - 2)P_{n-3}\\
+	~ & = & .....\\
+	~ & = & n(n -1)(n - 2)......(3)(2)P_{1}\\
+	~ & = & n(n -1)(n - 2)......(3)(2)(1)\\
+	~ & = & n!\\
+    \end{eqnarray*}
+	\end{frame}
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 2 (8.2 Exercise 32)}
+	\fontsize{10}{10pt}\selectfont
+	\vspace{0.3cm}
+	The associated homogeneous recurrence relation is a_{n} = 2a_{n−1} . \\
+	We easily solve it to obtain a_{n}^{(h)} = α2_{n} .\\
+	 Next we need a particular solution to the given recurrence relation.\\
+	  By Theorem 6 we want to look for a function of the form a_{n} = cn·2_{n}.\\ We plug this into our recurrence relation and obtain cn \cdot 2^n & = & 2c(n−1)2^{n-1} + 3 \cdot 2^n .\\
+We divide through by 2_{n−1}.\\
+Obtaining 2cn = 2c(n − 1) + 6, whence with a little simple algebra \\c = 3. $a_{n} = cn \cdot 2^n$.
+	Therefore the particular solution become $a_{n}^{(h)} = cn \cdot 2^n = 3n2^n $ So the general solution is the sum the homogeneous solution and this particular solution, namely 
+	\begin{eqnarray*}{\fontsize{10}{10pt}}{\arraycolsep=1pt}
+	 a_{n} & = & a_{n}^{(h)} + a_{n}^{(p)} \\
+	 ~ & = & \alpha \cdot 2^n + 3n2^n \\
+	 ~ & = & (3n + \alpha )2^n \\
+	\end{eqnarray*}
+	\end{frame}		%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 3 (8.3 Exercise 8)}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item $f~(2) = 2 \cdot 5 + 3 = 13$\\
+	\item $f~(4) & = & 2 \cdot 13 + 3 = 29$\\
+	$f~(8) & = & 2 \cdot 29 + 3 = 61$\\	
+	\item $f~(16) & = & 2 \cdot 61 + 3 = 125$\\
+	$f~(32) & = & 2 \cdot 125 + 3 = 253$\\
+	$f~(64) & = & 2 \cdot 253 + 3 = 509$\\	
+	\item $f~(128) & = & 2 \cdot 509 + 3 = 1021$\\
+	$f~(256) & = & 2 \cdot 1021 + 3 = 2045$\\
+	$f~(512) & = & 2 \cdot 2045 + 3 = 4093$\\
+	$f~(1024) & = & 2 \cdot 4093 + 3 = 8189$\\ 
+	\end{enumerate}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 4 (8.4 Exercise 4(a))}
+	\fontsize{10}{10pt}\selectfont
+	$ G(x) = a_{0} + a_{1}x + a_{2}x^2 + ... + a_{k}x^k + .... = \mathop{\sum\limits_{k=0}^{+\infty}} a_{k} x^k  $\\
+	\vspace{0.3cm}
+ Apparently all the terms are 0 except for the seven −1’s shown.\\
+	\vspace{0.5cm}
+	$ G(x) & = & - 1 - x - x^2 - ... - x^6 + 0x^7 + 0x^8 + ... $\\
+	~ & ~ &  = &$ - 1 - x - x^2 - ... - x^6 $\\
+	~ & ~ & = &\mathop{\sum\limits_{k=0}^{6}}- x^k \\
+	~ & ~ & = &-\mathop{\sum\limits_{k=0}^{6}}x^k \\
+	~ & ~ & = $&- \frac{1-x^7}{1-x}$ \\
+	\end{frame}
+	
+    %----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 5 (8.5 Exercise 2)}
+	\fontsize{10}{10pt}\selectfont
+	\vspace{0.5cm}
+	$ \left | C\cup D \right | & = & \left | C \right | + \left | D \right | - \left | C\cup D \right |  $ \\
+	
+	~ & ~ & ~ & ~& =345+212-188\\
+	~ & ~ & ~ & ~& =369 \\
+	\end{frame}
+	
+    %----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 6 (8.6 Exercise 8)}
+	\fontsize{10}{10pt}\selectfont
+	$ 5^7 - C(5,1) \cdot (5 - 1)^7 + C(5,2) \cdot (5 - 2)^7 + C(5,3) \cdot (5 - 3)^7 + C(5,4) \cdot (5 - 4)^7 \\= 16800 $
+	\end{frame}
+		
+	%----------------------------------------------------------------------------------
+
+		
+%----------------------------------------------------------------------------------
+\section{完成作業小時數}
+%----------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------	
+\begin{frame}
+\frametitle{完成作業小時數}
+\centerline{\fontsize{16}{16pt}\selectfont{\color{blue}完成作業小時數:\color{red}共\underline{   5   }小時\color{blue}(估算，取整數)}}	
+\end{frame}
+%----------------------------------------------------------------------------------	
+
+%----------------------------------------------------------------------------------
+\end{document}
+%----------------------------------------------------------------------------------
+

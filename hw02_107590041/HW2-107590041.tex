@@ -1,0 +1,283 @@
+\documentclass[14pt,hyperref={bookmarks=false}]{beamer}
+
+%\usepackage[no-math]{fontspec} % https://www.ptt.cc/bbs/LaTeX/M.1505577244.A.952.html
+\usepackage{xeCJK}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{musixtex}
+\usepackage{enumitem}
+
+\renewcommand\qedsymbol{$\blacktriangleleft$}
+
+%\setCJKmainfont{新細明體}
+\setCJKmainfont{標楷體}
+
+\usetheme{Malmoe}
+\usecolortheme{dolphin}
+\usefonttheme[onlymath]{serif}
+%\usefonttheme{serif} % professionalfonts
+% default, serif, professionalfonts, structurebold, structureitalicserif, structuresmallcapsserif
+\useoutertheme{miniframes} %{infolines}
+\usepackage{xmpmulti}
+
+\linespread{1.2}
+
+%\newenvironment{num}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{itemize}}
+%{\end{itemize}}
+
+%\newenvironment{enu}
+%{\leftmargini=6mm\leftmarginii=8mm\begin{enumerate}}
+%{\end{enumerate}}
+
+%-------------------------------------------------------------
+\title{離散數學 107-2}
+\subtitle{Homework 02}
+\author{姓名: 葉子瑄。學號: 107590041}
+\date{截止收件: 2019.04.10 (Wednesday) 23:59 pm \\ (week-8)}
+
+%-------------------------------------------------------------
+% page number
+% https://tex.stackexchange.com/questions/137022/how-to-insert-page-number-in-beamer-navigation-bars
+%-------------------------------------------------------------
+
+\setbeamertemplate{navigation symbols}
+{ \insertslidenavigationsymbol 
+  \insertframenavigationsymbol   
+  \insertsubsectionnavigationsymbol  
+  \insertsectionnavigationsymbol
+  \insertdocnavigationsymbol  
+  \insertbackfindforwardnavigationsymbol 
+  \hspace{1em}  
+  \usebeamerfont{footline} 
+  \insertframenumber
+  ~-~
+  \inserttotalframenumber
+}
+\setcounter{page}{1} 
+\pagenumbering{arabic} 
+
+
+%----------------------------------------------------------------------------------
+\begin{document}
+%----------------------------------------------------------------------------------
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\raggedright
+
+\begin{frame}
+% \tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge
+%\normalsize
+\footnotesize
+\tableofcontents
+\end{frame}
+	
+%----------------------------------------------------------------------------------
+\section{題目}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{題目與注意事項}
+	%----------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Homework 02 題目}
+	\fontsize{8pt}{9pt}\selectfont
+	\setlength{\baselineskip}{5pt}
+	\begin{columns}
+	\begin{column}{0.68\textwidth}
+	\begin{enumerate}[label=(Prob. \arabic*)]
+	\setlength\itemsep{0em}
+	\item page 132, chapter 2.1 Exercises 36
+	\item page 144, chapter 2.2 Exercises 4
+	\item page 163, chapter 2.3 Exercises 38
+	\item page 179, chapter 2.4 Exercises 34
+	\item page 186, chapter 2.5 Exercises 6
+	\item page 194, chapter 2.6 Exercises 4
+	\end{enumerate}
+	\end{column}
+	
+%	\begin{column}{0.45\textwidth}
+%	\begin{enumerate}[label=(Prob. \arabic*)]
+%	\addtocounter{enumi}{21}
+%	\setlength\itemsep{0em}
+%	\item page xx, chapter xx Exercises xx	
+%	\end{enumerate}
+%	\end{column}
+	
+	\end{columns}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{注意事項}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item 要熟悉 LaTeX 請翻閱 \ \htmladdnormallink{\color{blue}lshort}{https://ctan.org/tex-archive/info/lshort/}。
+	\item 記得在最後一頁，回報\selectfont \color{red}{完成作業小時數}(估算，取整數)\selectfont \color{black}{。}
+	\item 將檔案夾命名為 \texttt{hw02\_107820xxx}，將檔案夾壓縮成 \texttt{hw02\_107820xxx.zip}，上傳到\htmladdnormallink{\color{blue}網路學園}{http://elearning.ntut.edu.tw}。
+	\item LaTeX 數學符號請查此表: \ \htmladdnormallink{\color{blue}List of LaTeX mathematical symbols}{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols}。
+	\item 作業抄襲，以零分計。作業提供給他人抄襲，以零分計。
+	\item 作業遲交一週內成績打五折，作業遲交超過一週以零分計。
+	\end{enumerate}
+	\end{frame}
+
+%----------------------------------------------------------------------------------
+\section{作答區}
+%----------------------------------------------------------------------------------
+
+    %----------------------------------------------------------------------------------
+	\subsection{解題}
+	%----------------------------------------------------------------------------------
+	
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 1 (2.1 Exercises 36)}
+	\fontsize{9.5}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item $\{(a, a, a)\}$
+	\item $\{(0,0,0),(0,0,a),(0,a,0),(0,a,a),(a,0,0),(a,0,a),(a,a,0),(a,a,a)\}$
+	\end{enumerate}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 2 (2.2 Exercises 4)}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item $\{a, b, c, d, e, f, g, h\}$
+	\item $\{a,b,c,d,e\}$
+	\item $~\{\}$
+	\item $\{f,g,h\}$
+	\end{enumerate}
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 3 (2.3 Exercises 38)}
+	\fontsize{10}{10pt}\selectfont
+	答:\\
+	Given:~~$g$:$R \rightarrow R$~and~$f$:$R \rightarrow R$\\
+	$~~~~~~~~~~f(x)=x^2+1$\\
+	$~~~~~~~~~~g(x)=x+2$\\
+	$\therefore f \circ g~and~g \circ f$ are also from $R$ to $R$\\
+	$(f \circ g)(x)=f(g(x))=f(x+2)=(x+2)^2+1=x^2+4x+5$\\
+	$(g \circ f)(x)=g(f(x)=g(x^2+1)=(x^2+1)+2=x^2+3$\\
+	\end{frame}
+
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 4 (2.4 Exercises 34)}
+	\fontsize{10}{10pt}\selectfont
+	\begin{enumerate}[label=(\alph*)]
+	\item $(1−1)+(1-2)+(2−1)+(2−2)+(3−1)+(3−2)=3$
+	\item $0+2+4+3+5+7+6+8+10+9+11+13=78
+	 $
+	\item $0+1+2+0+1+2+0+1+2=9$
+	\item $0+0+1+8+27+4+32+108=180$
+	\end{enumerate}
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 5 (2.5 Exercises 6)}
+	\fontsize{10}{10pt}\selectfont
+	答:\\
+	$\because$ Hotel has a countable infinite number of rooms,we can number the  positive integers $\mathbf{Z^+}:1,2,3,...$\\
+	Given~:the hotel closes all the even numbered rooms\\
+	$f:\mathbf{Z^+} \rightarrow \mathbf{Z^+},f(n)=2n-1$\\
+	$\therefore$ Move each guest from room $n$ to room $2n-1$
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------
+	\begin{frame}
+	\frametitle{Problem 6 (2.6 Exercises 4)}
+	\fontsize{8}{9pt}\selectfont
+
+	(a)
+	\begin{equation*}
+	\begin{bmatrix}
+	    1 &  0 &  1 \\
+ 	    0 & -1 & -1 \\
+ 	   -1 &  1 &  0
+	\end{bmatrix}
+	\begin{bmatrix}
+	    0 &  1 & -1 \\
+ 	    1 & -1 &  0 \\
+ 	   -1 &  0 &  1
+	\end{bmatrix}	
+	=
+	\begin{bmatrix}
+	   -1 &  1 &  0 \\
+ 	    0 &  1 & -1 \\
+ 	    1 & -2 &  1
+	\end{bmatrix}
+	\end{equation*}
+	
+	(b)
+	\begin{equation*}
+	\begin{bmatrix}
+		1 & -3 & 0 \\
+		1 & 2  & 2 \\
+		2 & 1  & -1 \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 & -1 & 2 & 3\\
+		-1 & 0 & 3 & -1\\
+		-3 & -2 & 0 & 2
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		4 & -1 & -7 & 6\\
+		-7 & -5 & 8 & 5\\
+		4 & 0 & 7 & 3
+	\end{bmatrix}
+	\end{equation*}
+
+	(c)
+	\begin{equation*}
+	\begin{bmatrix}
+		0 & -1 \\
+		7 & 2\\
+		-4 & -3
+	\end{bmatrix}
+	\begin{bmatrix}
+	 4 & -1 & 2 & 3 & 0\\
+	 -2 & 0 & 3 & 4 & 1
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		2 & 0 & -3 & -4 & -1\\
+		24 & -7 & 20 & 29 & 2\\
+		-10 & 4 & -17 & -24 & -3
+	\end{bmatrix}
+	\end{equation*}
+	
+	\end{frame}					
+	%----------------------------------------------------------------------------------
+
+	
+	%----------------------------------------------------------------------------------
+
+		
+%----------------------------------------------------------------------------------
+\section{完成作業小時數}
+%----------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------	
+\begin{frame}
+\frametitle{完成作業小時數}
+\centerline{\fontsize{16}{16pt}\selectfont{\color{blue}完成作業小時數:\color{red}共\underline{   3   }小時\color{blue}(估算，取整數)}}	
+\end{frame}
+%----------------------------------------------------------------------------------	
+
+%----------------------------------------------------------------------------------
+\end{document}
+%----------------------------------------------------------------------------------
+
